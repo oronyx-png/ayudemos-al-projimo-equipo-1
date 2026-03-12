@@ -2,7 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donación</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
@@ -25,21 +27,21 @@
 <section>
     <article>
         <form>
-            <label>Nombre:</label><br>
-            <input type="text"><br><br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
 
-            <label>Correo:</label><br>
-            <input type="email"><br><br>
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo">
 
-            <label>Tipo de Donación:</label><br>
-            <select>
+            <label for="tipo">Tipo de Donación:</label>
+            <select id="tipo" name="tipo">
                 <option>Lorem Ipsum</option>
                 <option>Lorem Ipsum</option>
                 <option>Lorem Ipsum</option>
-            </select><br><br>
+            </select>
 
-            <label>Mensaje:</label><br>
-            <textarea rows="4" cols="30"></textarea><br><br>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
 
             <button type="submit">Lorem Ipsum</button>
         </form>
