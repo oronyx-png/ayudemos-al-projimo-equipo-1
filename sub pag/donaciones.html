@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Donación</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
@@ -24,32 +25,49 @@
 </nav>
 
 <section>
-    <article>
-        <form>
-            <label>Nombre:</label><br>
-            <input type="text"><br><br>
 
-            <label>Correo:</label><br>
-            <input type="email"><br><br>
+<article>
 
-            <label>Tipo de Donación:</label><br>
-            <select>
-                <option>Lorem Ipsum</option>
-                <option>Lorem Ipsum</option>
-                <option>Lorem Ipsum</option>
-            </select><br><br>
+<h2>Formulario de Donación</h2>
 
-            <label>Mensaje:</label><br>
-            <textarea rows="4" cols="30"></textarea><br><br>
+<form id="formulario-donacion">
 
-            <button type="submit">Lorem Ipsum</button>
-        </form>
-    </article>
+<label>Nombre:</label><br>
+<input type="text" required><br><br>
+
+<label>Correo:</label><br>
+<input type="email" required><br><br>
+
+<label>Tipo de Donación:</label><br>
+<select>
+<option>Efectivo</option>
+<option>Alimentos</option>
+<option>Ropa</option>
+</select><br><br>
+
+<label>Mensaje:</label><br>
+<textarea rows="4"></textarea><br><br>
+
+<button type="submit">Enviar Donación</button>
+
+</form>
+
+<!-- MENSAJE DE CONFIRMACIÓN -->
+
+<div id="mensaje-confirmacion" class="confirmacion">
+
+Gracias por apoyar la causa ❤️
+
+</div>
+
+</article>
+
 </section>
+
 
 <footer>
     <p>Lorem ipsum dolor sit amet.</p>
 </footer>
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

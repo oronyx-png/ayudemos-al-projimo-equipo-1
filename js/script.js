@@ -29,3 +29,24 @@ showSlide(-1);
 }
 
 showSlide(0);
+
+document.addEventListener("DOMContentLoaded", function(){
+
+let form = document.getElementById("formulario-donacion");
+let mensaje = document.getElementById("mensaje-confirmacion");
+
+if(form){
+
+form.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+mensaje.style.display = "block";
+
+form.reset();
+
+});
+
+}
+
+});
