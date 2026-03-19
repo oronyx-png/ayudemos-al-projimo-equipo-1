@@ -1,52 +1,57 @@
-let slideIndex = 0;
-let slides = document.querySelectorAll(".slide");
+document.addEventListener("DOMContentLoaded", function(){
+
+/* MENU HAMBURGUESA */
+window.toggleMenu = function(){
+document.getElementById("menu").classList.toggle("active");
+};
+
+/* CARRUSEL */
+document.querySelectorAll(".carousel").forEach(carousel=>{
+
+let slides = carousel.querySelectorAll(".slide");
+let index = 0;
 
 function showSlide(n){
-
-slides.forEach(slide=>{
-slide.classList.remove("active");
-});
-
-slideIndex += n;
-
-if(slideIndex >= slides.length){
-slideIndex = 0;
+slides.forEach(s=>s.classList.remove("active"));
+index = (index + n + slides.length) % slides.length;
+slides[index].classList.add("active");
 }
 
-if(slideIndex < 0){
-slideIndex = slides.length - 1;
-}
-
-slides[slideIndex].classList.add("active");
-}
-
-function nextSlide(){
-showSlide(1);
-}
-
-function prevSlide(){
-showSlide(-1);
-}
+carousel.querySelector(".next").onclick = ()=>showSlide(1);
+carousel.querySelector(".prev").onclick = ()=>showSlide(-1);
 
 showSlide(0);
 
-document.addEventListener("DOMContentLoaded", function(){
+});
 
+/* MODAL */
+let modal = document.getElementById("modal");
+
+if(modal){
+let modalImg = document.getElementById("modal-img");
+
+document.querySelectorAll(".gallery-grid img").forEach(img=>{
+img.onclick = ()=>{
+modal.style.display="block";
+modalImg.src = img.src;
+};
+});
+
+document.querySelector(".close").onclick = ()=>{
+modal.style.display="none";
+};
+}
+
+/* FORMULARIO */
 let form = document.getElementById("formulario-donacion");
 let mensaje = document.getElementById("mensaje-confirmacion");
 
 if(form){
-
-form.addEventListener("submit", function(event){
-
-event.preventDefault();
-
-mensaje.style.display = "block";
-
+form.addEventListener("submit", e=>{
+e.preventDefault();
+mensaje.style.display="block";
 form.reset();
-
 });
-
 }
 
 });

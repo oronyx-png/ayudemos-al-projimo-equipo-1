@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donaciones</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Donaciones</h1>
+</header>
+
+<nav>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<ul id="menu">
+<li><a href="../index.html">Inicio</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+<li><a href="ayudar.html">Ayudar</a></li>
+<li><a href="galeria.html">Galería</a></li>
+<li><a href="stats.html">Estadísticas</a></li>
+<li><a href="donaciones.html">Donar</a></li>
+</ul>
+</nav>
+
+<main>
+
+<article>
+
+<p>Completa el formulario para apoyar esta causa solidaria.</p>
+
+<form id="formulario-donacion">
+
+<label>Nombre:</label>
+<input type="text" required>
+<br>
+<label>Correo:</label>
+<input type="email" required>
+<br>
+<label>Tipo:</label>
+<select>
+<option>Efectivo</option>
+<option>Materiales</option>
+<option>Voluntariado</option>
+</select>
+<br>
+<label>Mensaje:</label>
+<textarea></textarea>
+<br>
+<button type="submit">Enviar</button>
+
+</form>
+
+<div id="mensaje-confirmacion" class="confirmacion">
+Gracias por apoyar la causa ❤️
+</div>
+
+</article>
+
+</main>
+
+<footer>
+    <p>&copy; Ayudemos al Prójimo - Colegio Intelecto. Elaborado por: Ramirez Luna & Montserrat Barbour</p>
+    <p>Dirección: C. Penetración 1 Urb. Thomén, Santiago de los Caballeros 51000 - Teléfono: (809) 241-4906</p>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,45 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Inicio - Ayudemos al Prójimo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
-    <h1>Proyecto Ayudemos al Prójimo</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h1>Ayudemos al Prójimo</h1>
+<p>Proyecto solidario del Colegio Intelecto</p>
 </header>
 
 <nav>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sub pag/sobre.html">Sobre el Proyecto</a></li>
-        <li><a href="sub pag/ayudar.html">Cómo Ayudar</a></li>
-        <li><a href="sub pag/galeria.html">Galería</a></li>
-        <li><a href="sub pag/stats.html">Estadísticas</a></li>
-        <li><a href="sub pag/donaciones.html">Donación</a></li>
-    </ul>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<ul id="menu">
+<li><a href="index.html">Inicio</a></li>
+<li><a href="pages/sobre.html">Sobre</a></li>
+<li><a href="pages/ayudar.html">Ayudar</a></li>
+<li><a href="pages/galeria.html">Galería</a></li>
+<li><a href="pages/stats.html">Estadísticas</a></li>
+<li><a href="pages/donaciones.html">Donar</a></li>
+</ul>
 </nav>
 
-<section>
-    <article>
-        <h2>Bienvenidos</h2>
-        <img src="img/imagen-principal.jpg" alt="Imagen principal" width="300">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <button>Lorem Ipsum</button>
-    </article>
+<main>
+
+<section class="hero">
+
+<h2>Bienvenidos</h2>
+
+<p>
+El proyecto “Ayudemos al Prójimo” busca apoyar comunidades vulnerables como La Tinajita.
+</p>
+
+<div class="img-box">
+<img src="img/foto1.jpg">
+</div>
+
+<a href="pages/donaciones.html#formulario-donacion">
+<button>Apoyar la causa</button>
+</a>
+
 </section>
 
+<section class="grid">
+
+<article>
+<div class="img-box"><img src="img/foto2.jpg"></div>
+<h3>Solidaridad</h3>
+<p>Promovemos valores como la empatía y el apoyo comunitario.</p>
+</article>
+
+<article>
+<div class="img-box"><img src="img/foto3.jpg"></div>
+<h3>Impacto</h3>
+<p>Mejoramos la calidad de vida de familias necesitadas.</p>
+</article>
+
+<article>
+<div class="img-box"><img src="img/foto4.jpg"></div>
+<h3>Compromiso</h3>
+<p>Trabajamos juntos por un cambio real.</p>
+</article>
+
+</section>
+
+</main>
+
 <footer>
-    <p>Lorem ipsum dolor sit amet.</p>
+    <p>&copy; Ayudemos al Prójimo - Colegio Intelecto. Elaborado por: Ramirez Luna & Montserrat Barbour</p>
+    <p>Dirección: C. Penetración 1 Urb. Thomén, Santiago de los Caballeros 51000 - Teléfono: (809) 241-4906</p>
 </footer>
-<script src="js/main.js"></script>
+
+<script src="js/script.js"></script>
 </body>
 </html>
