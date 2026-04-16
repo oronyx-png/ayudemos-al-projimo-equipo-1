@@ -5,6 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Estadísticas</title>
 <link rel="stylesheet" href="../css/style.css">
+<style>
+.stat-number{
+font-size:42px;
+font-weight:bold;
+color:#2c3e50;
+margin-bottom:5px;
+}
+
+.stat-label{
+font-size:13px;
+color:#7f8c8d;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.border-blue  { border-top:4px solid #3498db; }
+.border-green { border-top:4px solid #2ecc71; }
+.border-orange{ border-top:4px solid #e67e22; }
+.border-red   { border-top:4px solid #e74c3c; }
+
+.chart-wrap{
+position:relative;
+height:220px;
+margin-top:10px;
+}
+
+.progress-item{
+margin-bottom:18px;
+}
+
+.progress-label{
+display:flex;
+justify-content:space-between;
+font-size:14px;
+color:#555;
+margin-bottom:6px;
+}
+
+.progress-bg{
+background:#ecf0f1;
+border-radius:10px;
+height:13px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+border-radius:10px;
+}
+
+.fill-blue  { background:#3498db; }
+.fill-green { background:#2ecc71; }
+.fill-orange{ background:#e67e22; }
+</style>
 </head>
 
 <body>
@@ -27,35 +81,165 @@
 
 <main>
 
+<!-- TARJETAS NUMÉRICAS -->
 <section class="grid">
 
-<article>
-<div class="img-box"><img src="../img/foto6.jpg"></div>
-<h3>37 Viviendas</h3>
-<p>Necesitan reparación.</p>
+<article class="border-blue" style="text-align:center;">
+<div class="stat-number">120</div>
+<h3>Familias ayudadas</h3>
+<p>En la comunidad La Tinajita</p>
 </article>
 
-<article>
-<div class="img-box"><img src="../img/foto29.jpg"></div>
-<h3>3 Años</h3>
-<p>Duración del proyecto.</p>
+<article class="border-green" style="text-align:center;">
+<div class="stat-number">37</div>
+<h3>Viviendas</h3>
+<p>Necesitan reparación</p>
 </article>
 
-<article>
-<div class="img-box"><img src="../img/foto10.jpg"></div>
-<h3>La Tinajita</h3>
-<p>Comunidad beneficiada.</p>
+<article class="border-orange" style="text-align:center;">
+<div class="stat-number">3</div>
+<h3>Años del proyecto</h3>
+<p>Duración estimada</p>
+</article>
+
+<article class="border-red" style="text-align:center;">
+<div class="stat-number">RD$2M</div>
+<h3>Meta de recaudación</h3>
+<p>Objetivo total del proyecto</p>
 </article>
 
 </section>
 
+<!-- GRÁFICOS -->
+<section class="grid">
+
+<article>
+<h3>Familias ayudadas por año</h3>
+<div class="chart-wrap">
+<canvas id="chartFamilias"></canvas>
+</div>
+</article>
+
+<article>
+<h3>Tipo de donaciones</h3>
+<div class="chart-wrap">
+<canvas id="chartDonaciones"></canvas>
+</div>
+</article>
+
+<article>
+<h3>Recaudación mensual (RD$)</h3>
+<div class="chart-wrap">
+<canvas id="chartRecaudacion"></canvas>
+</div>
+</article>
+
+</section>
+
+<!-- BARRAS DE PROGRESO -->
+<article>
+<h3>Progreso del proyecto</h3>
+
+<div class="progress-item">
+<div class="progress-label">
+<span>Viviendas reparadas</span>
+<span>12 / 37</span>
+</div>
+<div class="progress-bg">
+<div class="progress-fill fill-blue" style="width:32%;"></div>
+</div>
+</div>
+
+<div class="progress-item">
+<div class="progress-label">
+<span>Meta de recaudación</span>
+<span>45%</span>
+</div>
+<div class="progress-bg">
+<div class="progress-fill fill-green" style="width:45%;"></div>
+</div>
+</div>
+
+<div class="progress-item">
+<div class="progress-label">
+<span>Voluntarios registrados</span>
+<span>68 / 100</span>
+</div>
+<div class="progress-bg">
+<div class="progress-fill fill-orange" style="width:68%;"></div>
+</div>
+</div>
+
+</article>
+
 </main>
 
 <footer>
-    <p>&copy; Ayudemos al Prójimo - Colegio Intelecto. Elaborado por: Ramirez Luna & Montserrat Barbour</p>
-    <p>Dirección: C. Penetración 1 Urb. Thomén, Santiago de los Caballeros 51000 - Teléfono: (809) 241-4906</p>
+<p>&copy; Ayudemos al Prójimo - Colegio Intelecto. Elaborado por: Ramirez Luna & Montserrat Barbour</p>
+<p>Dirección: C. Penetración 1 Urb. Thomén, Santiago de los Caballeros 51000 - Teléfono: (809) 241-4906</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../js/script.js"></script>
+<script>
+new Chart(document.getElementById('chartFamilias'),{
+type:'bar',
+data:{
+labels:['Año 1','Año 2','Año 3'],
+datasets:[{
+label:'Familias',
+data:[30,55,35],
+backgroundColor:['#3498db','#2ecc71','#9b59b6'],
+borderRadius:6
+}]
+},
+options:{
+responsive:true,
+maintainAspectRatio:false,
+plugins:{legend:{display:false}},
+scales:{y:{beginAtZero:true,ticks:{stepSize:10}}}
+}
+});
+
+new Chart(document.getElementById('chartDonaciones'),{
+type:'doughnut',
+data:{
+labels:['Efectivo','Materiales','Voluntariado'],
+datasets:[{
+data:[55,25,20],
+backgroundColor:['#3498db','#e67e22','#2ecc71'],
+borderWidth:2
+}]
+},
+options:{
+responsive:true,
+maintainAspectRatio:false,
+plugins:{legend:{position:'bottom'}}
+}
+});
+
+new Chart(document.getElementById('chartRecaudacion'),{
+type:'line',
+data:{
+labels:['Ene','Feb','Mar','Abr','May','Jun'],
+datasets:[{
+label:'RD$',
+data:[80000,120000,95000,160000,140000,200000],
+borderColor:'#e74c3c',
+backgroundColor:'rgba(231,76,60,0.1)',
+fill:true,
+tension:0.4,
+pointBackgroundColor:'#e74c3c'
+}]
+},
+options:{
+responsive:true,
+maintainAspectRatio:false,
+plugins:{legend:{display:false}},
+scales:{y:{beginAtZero:true,ticks:{callback:v=>'RD$'+(v/1000)+'k'}}}
+}
+});
+</script>
+
 </body>
 </html>
